@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Comment voter le 3 mars</title>
+    <script>
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+        }
+
+        // Function to hide the option that was selected in the previous page
+        function hidePreviousSelection() {
+            var choice1 = getURLParameter('choice1'); // Get the choice1 from URL
+            if (choice1) {
+                var radioToHide = document.getElementById('scenario' + choice1);
+                if (radioToHide) {
+                    radioToHide.style.display = 'none'; // Hide the radio button
+                    var labelToHide = document.querySelector('label[for="scenario' + choice1 + '"]');
+                    if (labelToHide) {
+                        labelToHide.style.display = 'none'; // Hide the label
+                    }
+                    if (radioToHide.parentNode) { // hide the parent td
+                        radioToHide.parentNode.style.display = 'none';
+                    }
+
+                }
+            }
+        }
+
+        // Function to redirect to 3.html with choice1 and choice2
+        function redirectToPage(value) {
+            var choice1 = getURLParameter('choice1');
+            window.location.href = '3.html?choice1=' + choice1 + '&choice2=' + value;
+        }
+
+        window.onload = hidePreviousSelection;
+    </script>
+</head>
+<body>
+    <div class="content">
+    <h1>Constitution : comment remplir votre bulletin de vote&nbsp;?</h1>
+    <p>Votre scénario préféré est enregistré.</p>
+    <p><b>Question 2</b>&nbsp;: Parmi les deux scénarios restants, lequel préférez-vous&nbsp;?</p>
+
+    <div id="form">
+    <table class="scenarios">
+        <tr>
+            <td onclick="redirectToPage('1')">
+                <input type="radio" id="scenario1" name="vote" value="1">
+                <label for="scenario1">La <b>Constitution de 2024</b> AVEC le droit de vote communal des permis C entre en vigueur</label>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="redirectToPage('2')">
+                <input type="radio" id="scenario2" name="vote" value="2">
+                <label for="scenario2">La <b>Constitution de 2024</b> SANS le droit de vote communal des permis C entre en vigueur</label>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="redirectToPage('3')">
+                <input type="radio" id="scenario3" name="vote" value="3">
+                <label for="scenario3">La Constitution de 1907 reste en vigueur</label>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <!-- <div class="copyright">Réalisé par Florian Evéquoz, 2024</div> -->
+    </div>
+</body>
+</html>

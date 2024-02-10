@@ -1,0 +1,216 @@
+/* General body styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* Add background image */
+    background-image: url('image.jpg'); /* Adjust the path as necessary */
+    background-size: cover; /* Cover the full available space */
+    background-position: center; /* Center the background image */
+    background-repeat: repeat-y; /* Do not repeat the image */
+}
+
+div.content {
+    /* Add semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.85); /* White with 70% opacity */
+    padding: 25px; /* Add padding to ensure content doesn't touch the edges */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    margin-bottom:  30px;
+}
+
+/* Responsive adjustments for tablets and desktops */
+@media (min-width: 768px) {
+    body {
+        font-size: 1.2rem; /* Adjust font size for larger screens */
+    }
+    .content {
+        max-width: 600px; /* Restrict max width for larger screens */
+        margin: 0 auto; /* Center content */
+        padding: 20px; /* Adjust padding for larger screens */
+    }
+}
+
+
+#form, .result {
+    text-align: center;
+}
+
+/* Spacing for all elements for a cleaner look */
+h1, p, ol, table {
+    margin-bottom: 20px;
+}
+
+/* Styling for headings */
+h1 {
+    color: #4bade7;
+    line-height:  0.85;
+}
+
+/* Ordered list styles */
+ol {
+    padding-left: 20px;
+}
+
+.preferences-style {
+    background-color: #ddd; /* Light gray background */
+    color: #444; /* Dark gray text */
+    padding: 20px; /* Padding around the content for spacing */
+    padding-top:  10px;
+    padding-bottom:  10px;
+    border-radius: 5px; /* Optional: adds rounded corners for a softer look */
+    text-align:  left;
+}
+
+
+/* Make radio buttons invisible */
+input[type="radio"] {
+    display: none;
+}
+
+/* Style for tds to make them look like selectable buttons */
+table.scenarios td {
+    display: block;
+    background-color: #f4f4f4;
+    padding: 10px 15px;
+    border: 2px solid #9dd3f0; /* Subtle light blue border */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 20px 0; /* Margin to separate tds */
+    font-size: 100%;
+}
+
+/* Removing specific label styles since the borders are now around the tds */
+
+/* Highlight choice on hover and focus */
+table.scenarios tr:hover td,
+tr:focus-within td {
+    background-color: #9dd3f0;
+    color: white;
+    border-color: #4bade7;
+    cursor:  pointer;
+}
+
+label:hover {
+    cursor:  pointer;
+}
+
+/* Change background when radio is checked */
+input[type="radio"]:checked + label {
+    color: white;
+}
+
+/* Additional CSS to change td border and background color when the radio inside is checked */
+input[type="radio"]:checked + label + td {
+    background-color: #9dd3f0;
+    border-color: #4bade7;
+}
+
+
+
+/*********** BULLETIN *****************/
+
+/* Table styles for elegance */
+#votingInstructions table {
+    max-width:  500px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#votingInstructions table, th, td {
+    border: 1px solid #4bade7;
+}
+
+#votingInstructions th, td {
+    text-align: left;
+    padding: 8px;
+    /*background-color: #9dd3f0*/
+    background-color: #e0f1fa;
+}
+
+/* Highlighting table headers */
+#votingInstructions th {
+    background-color: #4bade7;
+    color: white;
+}
+
+.bulletin_title {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.bold_underline {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.bulletin_text {
+    color:  #888;
+}
+
+
+/* Color coding for "OUI" and "NON" based on classes */
+.oui {
+    color: #4CAF50; /* Medium Green */
+    text-align:  center;
+    font-weight: bolder;
+}
+
+.non {
+    color: #F44336; /* Red */
+    text-align:  center;
+    font-weight: bolder;
+}
+
+.subsidiaire {
+    text-align:  center;
+}
+
+/* Table cell padding for elegance */
+td {
+    padding: 10px;
+}
+
+
+
+/******** BOUTON *****************/
+
+/* Button-like styling for labels and links */
+.button-like {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid #9dd3f0; /* Subtle light blue border */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.button-like:hover, .button-like:focus {
+    background-color: #9dd3f0;
+    color: white;
+    border-color: #4bade7;
+}
+
+
+
+.copyright {
+    margin-top:  30px;
+    font-size:  0.5rem;
+    color:  #aaa;
+    text-align:  center;
+}
+

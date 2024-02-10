@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Comment voter le 3 mars</title>
+    <script>
+        function redirectToPage(choice) {
+                    window.location.href = '2.html?choice1=' + choice;
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+    <h1>Constitution : comment remplir votre bulletin de vote&nbsp;?</h1>
+    <p><em>Ce guide vous aide à remplir le bulletin de vote sur la Constitution valaisanne en répondant à deux questions simples.</em></p>
+    <p><b>Question 1</b>&nbsp;: Après le vote populaire du 3 mars sur la nouvelle Constitution, trois scénarios peuvent se produire. Lequel de ces scénarios préférez-vous&nbsp;?</p>
+    
+    <div id="form">
+    <table class="scenarios">
+        <tr>
+            <td onclick="redirectToPage('1')">
+                <input type="radio" id="scenario1" name="vote" value="1">
+                <label for="scenario1">La <b>Constitution de 2024</b> AVEC le droit de vote communal des permis C entre en vigueur</label>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="redirectToPage('2')">
+                <input type="radio" id="scenario2" name="vote" value="2">
+                <label for="scenario2">La <b>Constitution de 2024</b> SANS le droit de vote communal des permis C entre en vigueur</label>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="redirectToPage('3')">
+                <input type="radio" id="scenario3" name="vote" value="3">
+                <label for="scenario3">La Constitution de 1907 reste en vigueur</label>
+            </td>
+        </tr>
+    </table>
+</div>
+
+    <!-- <div class="copyright">Réalisé par Florian Evéquoz, 2024</div>-->
+    </div>
+</body>
+</html>
