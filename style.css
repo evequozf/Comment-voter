@@ -71,6 +71,10 @@ ol {
     text-align:  left;
 }
 
+.hint {
+    font-size:  0.8rem;
+}
+
 
 /* Make radio buttons invisible */
 input[type="radio"] {
